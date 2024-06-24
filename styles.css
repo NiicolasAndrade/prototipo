@@ -235,7 +235,7 @@ footer a:hover {
   color: #e6b517;
 }
 
-/* Responsividade para 480px */
+/* Responsividade para dispositivos móveis (até 480px) */
 @media (max-width: 480px) {
   .container {
       width: 90%;
@@ -293,5 +293,138 @@ footer a:hover {
 
   footer p {
       font-size: 0.75rem;
+  }
+}
+
+/* Responsividade para dispositivos de tela média (768px a 834px) */
+@media (min-width: 768px) and (max-width: 834px) {
+  .container {
+      width: 85%;
+  }
+
+  .hero h2 {
+      font-size: 2.5rem;
+  }
+
+  .hero p {
+      font-size: 1.25rem;
+  }
+
+  .hero .btn {
+      padding: 1rem 2rem;
+  }
+
+  .section h2 {
+      font-size: 2rem;
+  }
+
+  .section p, .section .card, .section .example-card {
+      font-size: 1rem;
+  }
+
+  footer form label {
+      font-size: 1rem;
+  }
+
+  footer form input, footer form textarea {
+      font-size: 1rem;
+      padding: 0.75rem;
+  }
+
+  footer form button {
+      padding: 0.75rem 1.5rem;
+  }
+
+  footer p {
+      font-size: 1rem;
+  }
+}
+
+/* Responsividade para dispositivos de tela grande (1024px a 1440px) */
+/* Responsividade para dispositivos de tela grande (1024px a 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+      width: 90%;
+  }
+
+  .hero h2 {
+      font-size: 3rem;
+  }
+
+  .hero p {
+      font-size: 1.5rem;
+  }
+
+  .hero .btn {
+      padding: 1.25rem 2.5rem;
+  }
+
+  .section h2 {
+      font-size: 2.5rem;
+  }
+
+  .section p, .section .card, .section .example-card {
+      font-size: 1.25rem;
+  }
+
+  footer form label {
+      font-size: 1.25rem;
+  }
+
+  footer form input, footer form textarea {
+      font-size: 1.25rem;
+      padding: 0.75rem;
+  }
+
+  footer form button {
+      padding: 0.75rem 1.5rem;
+  }
+
+  footer p {
+      font-size: 1.25rem;
+  }
+}
+
+/* Responsividade para dispositivos de tela extra grande (maior que 1440px) */
+@media (min-width: 1440px) {
+  .container {
+      width: 80%;
+  }
+
+  .hero h2 {
+      font-size: 3.5rem;
+  }
+
+  .hero p {
+      font-size: 1.75rem;
+  }
+
+  .hero .btn {
+      padding: 1.5rem 3rem;
+  }
+
+  .section h2 {
+      font-size: 3rem;
+  }
+
+  .section p, .section .card, .section .example-card {
+      font-size: 1.5rem;
+  }
+
+  footer form label {
+      font-size: 1.5rem;
+  }
+
+  footer form input, footer form textarea {
+      font-size: 1.5rem;
+      padding: 0.75rem;
+  }
+
+  footer form button {
+      padding: 0.75rem 2rem;
+  }
+
+  footer p {
+      font-size: 1.5rem;
   }
 }
