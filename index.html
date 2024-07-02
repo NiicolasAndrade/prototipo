@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo de Robótica</title>
     <link rel="stylesheet" href="styles.css">
@@ -9,55 +11,25 @@
     <link rel="icon" href="favicon.ico">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
-<body>
-    <aside class="sidebar">
-        <header>
-            <button type="button" class="sidebar-burger" id="menu-toggle">
-                <i class="bx bx-menu"></i>
-            </button>
-            <h1>GRUPO DE ROBÓTICA</h1>
-        </header>
-        <ul>
-            <li>
-                <button type="button" onclick="onClick(this)">
-                    <i class="bx bx-home"></i>
-                    <p>Início</p>
-                </button>
-            </li>
-            <li>
-                <button type="button" onclick="onClick(this)">
-                    <i class="bx bx-book"></i>
-                    <p>Tema</p>
-                </button>
-            </li>
-            <li>
-                <button type="button" onclick="onClick(this)">
-                    <i class="bx bx-bulb"></i>
-                    <p>Desafios</p>
-                </button>
-            </li>
-            <li>
-                <button type="button" onclick="onClick(this)">
-                    <i class="bx bx-user"></i>
-                    <p>Autores</p>
-                </button>
-            </li>
-            <li>
-                <button type="button" onclick="onClick(this)">
-                    <i class="bx bx-briefcase"></i>
-                    <p>Empreendedorismo</p>
-                </button>
-            </li>
-            <li>
-                <button type="button" onclick="onClick(this)">
-                    <i class="bx bx-envelope"></i>
-                    <p>Contato</p>
-                </button>
-            </li>
-        </ul>
-    </aside>
 
-    <main>
+<body>
+    <nav class="navbar" id="navbar">
+        <h1>Grupo de Robótica</h1>
+        <div class="nav-toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+        <div class="nav-items" id="nav-items">
+            <a href="#home">Início</a>
+            <a href="#theme">Tema</a>
+            <a href="#challenges">Desafios</a>
+            <a href="#authors">Autores</a>
+            <a href="#entrepreneurship">Empreendedorismo</a>
+            <a href="#contact">Contato</a>
+            <a href="/projeto laysla/calculadora.html">Calculadora</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
         <!-- Seções do site -->
         <section id="home" class="hero">
             <div class="overlay"></div>
@@ -78,7 +50,11 @@
         <section id="authors" class="section">
             <div class="container">
                 <h2>Autores</h2>
-                <p>Jonson e Hermenegildo</p>
+                <p>Alef Paiva de Araújo</p>
+                <p>João Paulo Cardeal</p>
+                <p>Laysla Oliveira da Silva</p>
+                <p>Matheus Barbosa Da Rocha Silva</p>
+                <p>Ygor Guedes de Azevedo</p>
             </div>
         </section>
 
@@ -103,11 +79,10 @@
                 </div>
                 <div class="card">
                     <h3>Histórias pessoais de dificuldades financeiras</h3>
-                    <p>Histórias como a da avó deixada pelo marido, que teve que criar os filhos sozinha.</p>
+                    <p>Histórias como a da avó deixada pelo marido, que teve que criar os filhos sozinha enfrentando grandes dificuldades financeiras.</p>
                 </div>
             </div>
         </section>
-
         <section id="examples" class="section">
             <div class="container">
                 <h2>Autores e Relatos</h2>
@@ -116,7 +91,7 @@
                     <p>Relato: "Quando meu pai morreu, o governo demorou mais de um ano para pagar a pensão para minha mãe. Ela teve que trabalhar grávida sem receber a pensão."</p>
                 </div>
                 <div class="example-card">
-                    <h3>JOÃO PAULO - Curso de Administração 2° ano</hí>
+                    <h3>JOÃO PAULO - Curso de Administração 2° ano</h3>
                     <p>Relato: "Minha mãe mora em um lugar ruim e tem que viajar muito para chegar ao trabalho."</p>
                 </div>
                 <div class="example-card">
@@ -124,8 +99,8 @@
                     <p>Relato: "Durante a COVID, minha tia ficou sozinha com quatro filhos após a morte do meu tio. Ela precisou da ajuda da família para se reerguer."</p>
                 </div>
                 <div class="example-card">
-                    <h3>CURSO TÉCNICO EM ADMINISTRAÇÃO - 1º ANO</h3>
-                    <p>Relato: "Minha mãe sofreu em um relacionamento abusivo, mas não podia sair devido à dependência financeira."</p>
+                    <h3>CURSO TÉCNICO EM ADMINISTRAÇÃO - 1º ANO</p>
+                        <p>Relato: "Minha mãe sofreu em um relacionamento abusivo, mas não podia sair devido à dependência financeira."</p>
                 </div>
                 <div class="example-card">
                     <h3>CURSO TÉCNICO EM ELETROMECÂNICA - 1º ANO</h3>
@@ -140,31 +115,39 @@
                 <p>Foco no empreendedorismo como solução para geração de renda extra.</p>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <section id="contact">
+        <section id="entrepreneurship" class="section">
+            <div class="container">
+                <h2>Dicas de Renda Extra para Donas de Casa</h2>
+                <p>Foco no empreendedorismo como solução para geração de renda extra.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-light">
+            <div class="container">
                 <h2>Contato</h2>
                 <form>
                     <label for="name">Nome:</label>
                     <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
+                    <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" required>
                     <label for="message">Mensagem:</label>
                     <textarea id="message" name="message" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
-                <p>Email: contato@grupoderobotica.com | Telefone: (11) 1234-5678</p>
-                <p>Siga-nos nas redes sociais:
-                    <a href="#" target="_blank">Facebook</a> |
-                    <a href="#" target="_blank">Twitter</a> |
-                    <a href="#" target="_blank">Instagram</a>
-                </p>
-            </section>
-        </div>
-    </footer>
+            </div>
+        </section>
+    </main>
 
     <script src="scripts.js"></script>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navItems = document.getElementById('nav-items');
+
+        navToggle.addEventListener('click', () => {
+            navItems.classList.toggle('show');
+        });
+    </script>
 </body>
+
 </html>
