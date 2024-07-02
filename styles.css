@@ -6,96 +6,65 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #4E5464;
-  background-color: #E3E3DF;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
   line-height: 1.6;
-}
-
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 250px;
-  background-color: #2A2D34;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  transform: translateX(-100%);
-}
-
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.sidebar header {
-  padding: 20px;
-  background-color: #00ADB5;
-  text-align: center;
-}
-
-.sidebar header h1 {
   margin: 0;
-  font-size: 1.5em;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 20px;
-  flex: 1;
-}
-
-.sidebar ul li {
-  margin-bottom: 20px;
-}
-
-.sidebar ul button {
-  display: flex;
-  align-items: center;
+/* Navbar */
+.navbar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 10px;
-  background: none;
-  border: none;
+  background-color: #333;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
   color: #fff;
-  text-align: left;
+  margin: 0;
+}
+
+.nav-toggle {
+  display: none; /* Escondido por padrão em telas maiores */
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.sidebar ul button:hover {
-  background-color: #007F80;
+.nav-items {
+  display: flex;
+  gap: 20px;
 }
 
-.sidebar ul button.active {
-  background-color: #007F80;
+.nav-items a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.sidebar ul button i {
-  margin-right: 10px;
+.nav-items a:hover {
+  color: #00adb5;
 }
 
-.main {
-  margin-left: 250px;
-  padding: 20px;
-  transition: margin-left 0.3s ease;
-}
-
-.main.shrink {
-  margin-left: 0;
-}
-
-/* Seção Hero */
+/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
-  background: url('banner.jpg') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("banner.jpg") no-repeat center center/cover;
+  color: #fff;
 }
 
 .hero .overlay {
@@ -104,60 +73,56 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.hero .container {
-  position: relative;
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .hero .btn {
-  background-color: #00ADB5;
-  color: #fff;
+  display: inline-block;
   padding: 10px 20px;
+  background-color: #00adb5;
+  color: #fff;
+  font-size: 1rem;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .hero .btn:hover {
-  background-color: #007F80;
+  background-color: #007f80;
 }
 
-/* Seções */
+/* Sections */
 .section {
-  padding: 60px 20px;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .section h2 {
-  font-size: 2em;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .section p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .section.bg-light {
-  background-color: #F4F4F9;
+  background-color: #fff;
 }
 
-/* Cartões */
-.card, .example-card {
+/* Cards */
+.card {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
@@ -165,93 +130,120 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card h3, .example-card h3 {
-  margin-top: 0;
-  color: #2A2D34;
-}
-
-.card p, .example-card p {
-  color: #4E5464;
-}
-
-/* Formulário de Contato */
-footer {
-  background-color: #2A2D34;
-  color: #fff;
-  padding: 40px 0;
-  text-align: center;
-}
-
-footer form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-footer form label {
-  margin: 10px 0 5px;
-  color: #E3E3DF;
-}
-
-footer form input, footer form textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
+.card h3 {
+  font-size: 1.5rem;
+  color: #333;
   margin-bottom: 10px;
-  width: 80%;
-  max-width: 400px;
 }
 
-footer form button {
-  background-color: #00ADB5;
+.card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Form */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #00adb5;
   color: #fff;
-  padding: 10px 20px;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-footer form button:hover {
-  background-color: #007F80;
+form button:hover {
+  background-color: #007f80;
 }
 
-footer p {
-  margin: 10px 0;
-}
-
-footer p a {
-  color: #00ADB5;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer p a:hover {
-  color: #007F80;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .sidebar {
-      transform: translateX(-100%);
+  .navbar {
+    padding: 10px;
+    justify-content: space-between;
   }
 
-  .sidebar.active {
-      transform: translateX(0);
+  .navbar h1 {
+    font-size: 1.2rem;
   }
 
-  .main {
-      margin-left: 0;
+  .nav-toggle {
+    display: block; /* Mostrar o ícone do hamburguer */
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
   }
 
-  .hero {
-      height: 60vh;
+  .nav-items {
+    display: none; /* Esconder os itens da navbar */
+    position: absolute;
+    top: 60px; /* Ajuste conforme o tamanho da navbar */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-items.show {
+    display: flex; /* Mostrar os itens da navbar quando o menu hamburguer for clicado */
+  }
+
+  .nav-items a {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #666;
+  }
+
+  .nav-items a:last-child {
+    border-bottom: none; /* Remover a borda inferior do último item */
   }
 
   .hero h2 {
-      font-size: 1.8em;
+    font-size: 2.5rem;
   }
 
   .hero p {
-      font-size: 1em;
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  form {
+    padding: 15px;
   }
 }
