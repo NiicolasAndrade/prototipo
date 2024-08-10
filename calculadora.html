@@ -1,247 +1,299 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Gastos Mensais</title>
-  <style>
-    /* Estilos específicos para a calculadora de gastos */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #E3E3DF;
-      /* Cor de fundo do site */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gastos Mensais</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E3E3DF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
-    .container {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      width: 80%;
-      max-width: 600px;
-    }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #4E5464;
-      /* Cor principal do site */
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4E5464;
+        }
 
-    .input-group {
-      margin-bottom: 10px;
-    }
+        .input-group {
+            margin-bottom: 15px;
+        }
 
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      color: #8C8998;
-      /* Cor secundária do site */
-    }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #8C8998;
+        }
 
-    .input-group input {
-      width: calc(100% - 20px);
-      padding: 8px 10px;
-      font-size: 16px;
-      border: 1px solid #C5C4CB;
-      /* Cor de borda do site */
-      border-radius: 4px;
-    }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #C5C4CB;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-    .input-group input:focus {
-      outline: none;
-      border-color: #4E5464;
-      /* Cor de destaque do site */
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    }
+        .input-group input:focus {
+            outline: none;
+            border-color: #4E5464;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        }
 
-    button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      font-size: 18px;
-      background-color: #4E5464;
-      /* Cor de botão do site */
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      /* Espaçamento entre o botão e os resultados */
-    }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #4E5464;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
 
-    button:hover {
-      background-color: #8C8998;
-      /* Cor de botão hover do site */
-    }
+        button:hover {
+            background-color: #8C8998;
+        }
 
-    #resultado {
-      margin-top: 20px;
-      border-top: 1px solid #C5C4CB;
-      /* Cor de linha do site */
-      padding-top: 20px;
-    }
+        #resultado {
+            margin-top: 20px;
+            border-top: 1px solid #C5C4CB;
+            padding-top: 20px;
+        }
 
-    #resultado h3 {
-      color: #4E5464;
-      /* Cor principal do site */
-      margin-bottom: 10px;
-    }
+        #resultado h3 {
+            color: #4E5464;
+            margin-bottom: 10px;
+        }
 
-    #resultado p {
-      margin-bottom: 5px;
-    }
+        #resultado p {
+            margin-bottom: 5px;
+        }
 
-    #resultado hr {
-      margin: 10px 0;
-      border: none;
-      border-top: 1px solid #C5C4CB;
-      /* Cor de linha do site */
-    }
+        #resultado hr {
+            margin: 10px 0;
+            border: none;
+            border-top: 1px solid #C5C4CB;
+        }
 
-    #resultado ul {
-      padding-left: 20px;
-    }
+        #resultado ul {
+            padding-left: 20px;
+        }
 
-    @media only screen and (max-width: 600px) {
-      .container {
-        width: 95%;
-      }
-    }
-  </style>
+        /* Responsividade */
+        @media only screen and (max-width: 414px) {
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .input-group input {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            #resultado h3 {
+                font-size: 18px;
+            }
+
+            #resultado p {
+                font-size: 14px;
+            }
+
+            #resultado ul {
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (min-width: 828px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 500px;
+            }
+
+            button {
+                padding: 16px;
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .input-group input {
+                padding: 12px;
+                font-size: 18px;
+            }
+
+            #resultado h3 {
+                font-size: 20px;
+            }
+
+            #resultado p {
+                font-size: 16px;
+            }
+
+            #resultado ul {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Calculadora de Gastos Mensais</h1>
-    <div class="input-group">
-      <label for="salario">Salário Mensal:</label>
-      <input type="number" id="salario" placeholder="Digite o salário">
+    <div class="container">
+        <h1>Calculadora de Gastos Mensais</h1>
+        <div class="input-group">
+            <label for="salario">Salário Mensal:</label>
+            <input type="number" id="salario" placeholder="Digite o salário">
+        </div>
+        <div class="input-group">
+            <label for="alimentacao">Gastos com Alimentação:</label>
+            <input type="number" id="alimentacao" placeholder="Digite o valor">
+        </div>
+        <div class="input-group">
+            <label for="transporte">Gastos com Transporte:</label>
+            <input type="number" id="transporte" placeholder="Digite o valor">
+        </div>
+        <div class="input-group">
+            <label for="moradia">Gastos com Moradia:</label>
+            <input type="number" id="moradia" placeholder="Digite o valor">
+        </div>
+        <div class="input-group">
+            <label for="outros">Outros Gastos:</label>
+            <input type="number" id="outros" placeholder="Digite o valor">
+        </div>
+        <button onclick="calcularGastos()">Calcular</button>
+        <div id="resultado"></div>
+        <button onclick="voltarParaInicio()">Voltar para a página inicial</button>
     </div>
-    <div class="input-group">
-      <label for="alimentacao">Gastos com Alimentação:</label>
-      <input type="number" id="alimentacao" placeholder="Digite o valor">
-    </div>
-    <div class="input-group">
-      <label for="transporte">Gastos com Transporte:</label>
-      <input type="number" id="transporte" placeholder="Digite o valor">
-    </div>
-    <div class="input-group">
-      <label for="moradia">Gastos com Moradia:</label>
-      <input type="number" id="moradia" placeholder="Digite o valor">
-    </div>
-    <div class="input-group">
-      <label for="outros">Outros Gastos:</label>
-      <input type="number" id="outros" placeholder="Digite o valor">
-    </div>
-    <button onclick="calcularGastos()">Calcular</button>
-    <div id="resultado"></div>
-    <button onclick="voltarParaInicio()">Voltar para a página inicial</button>
-  </div>
 
-  <script>
-    function calcularGastos() {
-      const salario = getInputValue('salario');
-      const alimentacao = getInputValue('alimentacao');
-      const transporte = getInputValue('transporte');
-      const moradia = getInputValue('moradia');
-      const outros = getInputValue('outros');
+    <script>
+        function calcularGastos() {
+            const salario = getInputValue('salario');
+            const alimentacao = getInputValue('alimentacao');
+            const transporte = getInputValue('transporte');
+            const moradia = getInputValue('moradia');
+            const outros = getInputValue('outros');
 
-      const totalGastos = alimentacao + transporte + moradia + outros;
-      const porcentagens = calcularPorcentagens({ alimentacao, transporte, moradia, outros }, totalGastos);
-      const saldoRestante = salario - totalGastos;
+            const totalGastos = alimentacao + transporte + moradia + outros;
+            const porcentagens = calcularPorcentagens({ alimentacao, transporte, moradia, outros }, totalGastos);
+            const saldoRestante = salario - totalGastos;
 
-      const porcentagensIdeais = {
-        alimentacao: 30,
-        transporte: 20,
-        moradia: 35,
-        outros: 15
-      };
+            const porcentagensIdeais = {
+                alimentacao: 30,
+                transporte: 20,
+                moradia: 35,
+                outros: 15
+            };
 
-      const gastosIdeais = calcularGastosIdeais(salario, porcentagensIdeais);
+            const gastosIdeais = calcularGastosIdeais(salario, porcentagensIdeais);
 
-      exibirResultados({ alimentacao, transporte, moradia, outros, totalGastos, saldoRestante }, porcentagens, gastosIdeais);
-      exibirSugestoes();
-    }
+            exibirResultados({ alimentacao, transporte, moradia, outros, totalGastos, saldoRestante }, porcentagens, gastosIdeais);
+            exibirSugestoes();
+        }
 
-    function getInputValue(id) {
-      return parseFloat(document.getElementById(id).value) || 0;
-    }
+        function getInputValue(id) {
+            return parseFloat(document.getElementById(id).value) || 0;
+        }
 
-    function calcularPorcentagens(gastos, totalGastos) {
-      const porcentagens = {};
-      for (const [categoria, valor] of Object.entries(gastos)) {
-        porcentagens[categoria] = (valor / totalGastos) * 100;
-      }
-      return porcentagens;
-    }
+        function calcularPorcentagens(gastos, totalGastos) {
+            const porcentagens = {};
+            for (const [categoria, valor] of Object.entries(gastos)) {
+                porcentagens[categoria] = (valor / totalGastos) * 100;
+            }
+            return porcentagens;
+        }
 
-    function calcularGastosIdeais(salario, porcentagensIdeais) {
-      const gastosIdeais = {};
-      for (const [categoria, porcentagem] of Object.entries(porcentagensIdeais)) {
-        gastosIdeais[categoria] = {
-          valor: (salario * (porcentagem / 100)).toFixed(2),
-          porcentagem
-        };
-      }
-      return gastosIdeais;
-    }
+        function calcularGastosIdeais(salario, porcentagensIdeais) {
+            const gastosIdeais = {};
+            for (const [categoria, porcentagem] of Object.entries(porcentagensIdeais)) {
+                gastosIdeais[categoria] = {
+                    valor: (salario * (porcentagem / 100)).toFixed(2),
+                    porcentagem
+                };
+            }
+            return gastosIdeais;
+        }
 
-    function exibirResultados(gastos, porcentagens, gastosIdeais) {
-      const { alimentacao, transporte, moradia, outros, totalGastos, saldoRestante } = gastos;
-      const resultado = document.getElementById('resultado');
-      resultado.innerHTML = `
-            <h3>Resumo dos Gastos</h3>
-            <p>Gastos com Alimentação: R$ ${alimentacao.toFixed(2)} (${porcentagens.alimentacao.toFixed(1)}% do total)</p>
-            <p>Gastos com Transporte: R$ ${transporte.toFixed(2)} (${porcentagens.transporte.toFixed(1)}% do total)</p>
-            <p>Gastos com Moradia: R$ ${moradia.toFixed(2)} (${porcentagens.moradia.toFixed(1)}% do total)</p>
-            <p>Outros Gastos: R$ ${outros.toFixed(2)} (${porcentagens.outros.toFixed(1)}% do total)</p>
-            <hr>
-            <h4>Total de Gastos: R$ ${totalGastos.toFixed(2)}</h4>
-            <h4>Saldo Restante: R$ ${saldoRestante.toFixed(2)}</h4>
-            <h3>Divisão Ideal do Salário</h3>
-            ${exibirGastosIdeais(gastosIdeais)}
-        `;
-    }
+        function exibirResultados(gastos, porcentagens, gastosIdeais) {
+            const { alimentacao, transporte, moradia, outros, totalGastos, saldoRestante } = gastos;
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = `
+                <h3>Resumo dos Gastos</h3>
+                <p>Gastos com Alimentação: R$ ${alimentacao.toFixed(2)} (${porcentagens.alimentacao.toFixed(1)}% do total)</p>
+                <p>Gastos com Transporte: R$ ${transporte.toFixed(2)} (${porcentagens.transporte.toFixed(1)}% do total)</p>
+                <p>Gastos com Moradia: R$ ${moradia.toFixed(2)} (${porcentagens.moradia.toFixed(1)}% do total)</p>
+                <p>Outros Gastos: R$ ${outros.toFixed(2)} (${porcentagens.outros.toFixed(1)}% do total)</p>
+                <hr>
+                <h4>Total de Gastos: R$ ${totalGastos.toFixed(2)}</h4>
+                <h4>Saldo Restante: R$ ${saldoRestante.toFixed(2)}</h4>
+                <h3>Divisão Ideal do Salário</h3>
+                ${exibirGastosIdeais(gastosIdeais)}
+            `;
+        }
 
-    function exibirGastosIdeais(gastosIdeais) {
-      return Object.entries(gastosIdeais).map(([categoria, { valor, porcentagem }]) => {
-        return `<p>Gastos ideais com ${capitalize(categoria)}: R$ ${valor} (${porcentagem}%)</p>`;
-      }).join('');
-    }
+        function exibirGastosIdeais(gastosIdeais) {
+            return Object.entries(gastosIdeais).map(([categoria, { valor, porcentagem }]) => {
+                return `<p>Gastos ideais com ${capitalize(categoria)}: R$ ${valor} (${porcentagem}%)</p>`;
+            }).join('');
+        }
 
-    function exibirSugestoes() {
-      const sugestoes = document.createElement('div');
-      sugestoes.innerHTML = `
-            <h3>Sugestões para Ajustar os Gastos:</h3>
-            <ul>
-                <li>Para reduzir os gastos com alimentação, considere preparar mais refeições em casa e evitar comer fora com frequência.</li>
-                <li>No transporte, avalie opções como transporte público ou carona para economizar combustível e manutenção do veículo.</li>
-                <li>Para moradia, verificar se há possibilidade de renegociar o aluguel ou despesas fixas relacionadas à habitação.</li>
-                <li>Em outros gastos, examine despesas desnecessárias e procure maneiras de reduzi-las, como cancelar assinaturas não utilizadas.</li>
-            </ul>
-        `;
-      const resultado = document.getElementById('resultado');
-      resultado.appendChild(sugestoes);
-    }
+        function exibirSugestoes() {
+            const sugestoes = document.createElement('div');
+            sugestoes.innerHTML = `
+                <h3>Sugestões para Redução de Gastos</h3>
+                <ul>
+                    <li>Avalie a possibilidade de reduzir os gastos com alimentação optando por refeições caseiras.</li>
+                    <li>Considere alternativas de transporte mais econômicas, como o uso de transporte público ou bicicleta.</li>
+                    <li>Revise suas despesas com moradia e veja se há oportunidades de economia.</li>
+                    <li>Reduza os gastos supérfluos e priorize o essencial.</li>
+                </ul>
+            `;
+            document.getElementById('resultado').appendChild(sugestoes);
+        }
 
-    function capitalize(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase + string.slice(1);
+        }
 
-    function voltarParaInicio() {
-      // Aqui você pode redirecionar para a página inicial do seu site
-      window.location.href = "index.html";
-    }
-  </script>
-
+        function voltarParaInicio() {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
-
 </html>
