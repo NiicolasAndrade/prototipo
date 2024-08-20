@@ -7,8 +7,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  color: #333;
-  background-color: #f0f0f0;
+  color: #333333; /* Texto cinza escuro */
+  background-color: #f0f0f0; /* Fundo cinza claro */
   line-height: 1.6;
   margin: 0;
 }
@@ -20,7 +20,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
+  background-color: #333; /* Mantendo a cor original do cabeçalho */
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -41,7 +41,7 @@ body {
 
 .navbar h1 {
   font-size: 1.5rem;
-  color: #fff;
+  color: #fff; /* Texto branco */
   margin: 0;
 }
 
@@ -57,7 +57,7 @@ body {
 
 .nav-items a {
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* Links brancos */
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -75,7 +75,7 @@ body {
   align-items: center;
   text-align: center;
   background: url("banner.jpg") no-repeat center center/cover;
-  color: #fff;
+  color: #fff; /* Texto branco */
 }
 
 .hero .overlay {
@@ -84,7 +84,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay */
 }
 
 .hero h2 {
@@ -101,7 +101,7 @@ body {
   display: inline-block;
   padding: 10px 20px;
   background-color: #00adb5;
-  color: #fff;
+  color: #fff; /* Texto branco */
   font-size: 1rem;
   text-decoration: none;
   border-radius: 5px;
@@ -121,20 +121,22 @@ body {
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #333; /* Título cinza escuro */
 }
 
 .section p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  color: #666; /* Texto cinza */
 }
 
 .section.bg-light {
-  background-color: #fff;
+  background-color: #ffffff; /* Fundo branco */
 }
 
 /* Cards */
 .card {
-  background-color: #fff;
+  background-color: #ffffff; /* Fundo branco */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -143,13 +145,13 @@ body {
 
 .card h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #333; /* Título cinza escuro */
   margin-bottom: 10px;
 }
 
 .card p {
   font-size: 1rem;
-  color: #666;
+  color: #666; /* Texto cinza */
 }
 
 /* Form */
@@ -157,7 +159,7 @@ form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff; /* Fundo branco */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -166,6 +168,7 @@ form label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
+  color: #333; /* Texto cinza escuro */
 }
 
 form input,
@@ -173,9 +176,11 @@ form textarea {
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* Borda cinza claro */
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #f9f9f9; /* Fundo cinza claro */
+  color: #333; /* Texto cinza escuro */
 }
 
 form button {
@@ -183,7 +188,7 @@ form button {
   width: 100%;
   padding: 12px;
   background-color: #00adb5;
-  color: #fff;
+  color: #fff; /* Texto branco */
   font-size: 1rem;
   border: none;
   border-radius: 5px;
@@ -209,7 +214,7 @@ form button:hover {
   .nav-toggle {
     display: block; /* Mostrar o ícone do hamburguer */
     font-size: 1.5rem;
-    color: #fff;
+    color: #fff; /* Ícone branco */
     cursor: pointer;
   }
 
@@ -219,7 +224,7 @@ form button:hover {
     top: 60px; /* Ajuste conforme o tamanho da navbar */
     left: 0;
     right: 0;
-    background-color: #333;
+    background-color: #333; /* Fundo cinza escuro */
     flex-direction: column;
     padding: 10px;
     gap: 10px;
@@ -235,7 +240,7 @@ form button:hover {
   .nav-items a {
     text-align: center;
     padding: 10px 0;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #666; /* Borda cinza */
   }
 
   .nav-items a:last-child {
@@ -257,4 +262,13 @@ form button:hover {
   form {
     padding: 15px;
   }
+}
+ .nome{
+  text-decoration: none;
+
+  color: inherit;
+ }
+ a:hover {
+  color: #473ab6; /* Cor do link ao passar o mouse (opcional) */
+  text-decoration: none; /* Garante que o sublinhado continue removido ao passar o mouse */
 }
